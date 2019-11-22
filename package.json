@@ -1,0 +1,46 @@
+{
+  "name": "node-express-mongo-auth-clean-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && babel src -d dist",
+    "now-build": "npm run build",
+    "clean": "rimraf dist",
+    "db": "babel-node ./db/index.js",
+    "dev": "nodemon --exec babel-node ./src/index.js",
+    "start": "npm run clean && npm run build && npm run db && cd dist && node index.js",
+    "test": "jest src --watch",
+    "test:e2e": "jest ./__test__ --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-plugin-inline-dotenv": "^1.5.0",
+    "body-parser": "^1.19.0",
+    "cuid": "^2.1.6",
+    "express": "^4.17.1",
+    "is-valid-email": "0.0.5",
+    "mongodb": "^3.3.4"
+  },
+  "jest": {
+    "verbose": false,
+    "globalSetup": "./jest-setup.js",
+    "globalTeardown": "./jest-teardown.js",
+    "testEnvironment": "./jest-mongo.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "babel-jest": "^24.9.0",
+    "dotenv": "^8.2.0",
+    "faker": "^4.1.0",
+    "jest": "^24.9.0",
+    "mongodb-memory-server": "^6.0.1",
+    "nodemon": "^2.0.0",
+    "rimraf": "^3.0.0"
+  }
+}
