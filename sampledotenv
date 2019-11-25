@@ -3,3 +3,4 @@ PORT=3000
 DB_URL=mongodb://localhost:27017
 DB_NAME=auth_starter_api
 ENV=dev
+PRIVATE_KEY=your_private_key
