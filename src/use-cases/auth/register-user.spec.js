@@ -22,11 +22,10 @@ describe('use case register user', () => {
     const { password, passwordConfirmation, ...expectedUser } = newUser
     expect(insertedUser).toEqual(expectedUser)
   })
-  it('should not return the passwor', async () => {
+  it('should not return the password', async () => {
     const newUser = makeUserWithPassword()
     const registerUser = makeRegisterUser({ userDb: userDbBase, hash })
     const insertedUser = await registerUser(newUser)
-    const { password, passwordConfirmation, ...expectedUser } = newUser
     expect(insertedUser.password).toBe(undefined)
   })
   it('email must be unique', async () => {

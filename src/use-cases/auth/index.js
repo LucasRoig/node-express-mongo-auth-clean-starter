@@ -1,8 +1,9 @@
 import makeRegisterUser from './register-user'
+import bcrypt from 'bcrypt'
 import { usersDb } from '../../data-access'
 
 //TODO: use bcrypt
-const hash = p => p
+const hash = pass => bcrypt.hash(pass, 10)
 
 const registerUser = makeRegisterUser({ userDb: usersDb, hash})
 
