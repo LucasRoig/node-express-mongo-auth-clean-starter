@@ -1,10 +1,13 @@
 import makeRegister from './register'
-import { registerUser } from '../../use-cases/auth'
+import makeLogin from './login'
+import { registerUser, loginUser } from '../../use-cases/auth'
 
 const register = makeRegister(registerUser)
+const login = makeLogin(loginUser)
 
 const AuthController = Object.freeze({
-  register
+  register,
+  login
 })
 
 export default AuthController

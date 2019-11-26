@@ -1,4 +1,5 @@
 module.exports = function makeExpressCallabck (controller) {
+  //TODO: sanitize inputs
   return (req, res) => {
     const httpRequest = {
       body: req.body,

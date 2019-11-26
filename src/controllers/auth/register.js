@@ -8,7 +8,7 @@ export default function makeRegister (registerUser) {
       }
     } catch (e) {
       //TODO: Real logger ?
-      console.error(e)
+      console.log(e)
 
       return {
         statusCode: 400,

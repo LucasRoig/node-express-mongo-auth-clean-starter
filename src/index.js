@@ -10,6 +10,7 @@ const app = express()
 app.use(bodyParser.json())
 
 app.post('/auth/register', makeCallback(AuthController.register))
+app.post('/auth/login', makeCallback(AuthController.login))
 
 if (process.env.ENV === 'dev') {
   app.listen(process.env.PORT || 3000, () => {
